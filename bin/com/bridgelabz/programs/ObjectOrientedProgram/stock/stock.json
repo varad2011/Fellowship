@@ -1,0 +1,12 @@
+{"stock":
+ [{"stockName":"ICICI"
+,"numberOfShare":200,
+"sharePrice":20,
+"totalValue":0},
+{"stockName":"BANKOFINDIAN",
+"numberOfShare":200,"sharePrice":13,
+"totalValue":0},
+{"stockName":"SBI",
+"numberOfShare":61,"sharePrice":50
+,"totalValue":0}
+]}
