@@ -9,10 +9,11 @@ module FellowshipVarad
 	exports com.bridgelabz.programs.basiccore;
 	exports com.bridgelabz.programs.tempCreateClass;
 	exports com.bridgelabz.programs.ObjectOrientedProgram;
-	exports com.bridgelabz.programs.ObjectOrientedProgram.inventoryDetails ;
-	exports com.bridgelabz.programs.ObjectOrientedProgram.stock ;
-	exports com.bridgelabz.programs.ObjectOrientedProgram.addressBook ;
-	exports com.bridgelabz.programs.ObjectOrientedProgram.cliniqueManagement ;
+	exports com.bridgelabz.programs.ObjectOrientedProgram.inventoryDetails;
+	exports com.bridgelabz.programs.ObjectOrientedProgram.stock;
+	exports com.bridgelabz.programs.ObjectOrientedProgram.addressBook;
+	exports com.bridgelabz.programs.ObjectOrientedProgram.cliniqueManagement;
+	//exports com.bridgelabz.programs.ObjectOrientedProgram.designPattern;
 	requires jackson.all;
 	requires java.sql;
 }

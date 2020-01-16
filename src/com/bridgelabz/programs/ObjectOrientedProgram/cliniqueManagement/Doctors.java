@@ -7,7 +7,15 @@ public class Doctors
 	private  String Specialization ;
 	private  String Availability ;
 	private int numberOfslot ;
+	private String date ;
 	
+	
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 	public int getNumberOfslot() {
 		return numberOfslot;
 	}

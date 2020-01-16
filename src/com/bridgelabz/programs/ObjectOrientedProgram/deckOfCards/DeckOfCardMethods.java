@@ -8,50 +8,50 @@ import com.bridgelabz.programs.utility.OopsUtil;
 
 public class DeckOfCardMethods 
 {
-	LinkedList< String > newLinkedList = new LinkedList< String >() ;
+	LinkedList< String > newLinkedList = new LinkedList< String >();
 	
 	public  String[]  createDeckOfcard ( String[] suit ,String [] rank) 
 	{
-		String[] deckOfCard = new String[52] ;
-		int number = 0 ;
-		for( int i = 0 ; i < suit.length ; i++  )
+		String[] deckOfCard = new String[52];
+		int number = 0;
+		for( int i = 0; i < suit.length; i++  )
 		{
-			for(int j = 0 ; j< rank.length ; j++ ) 
+			for(int j = 0; j< rank.length; j++ ) 
 			{
-				deckOfCard[number] = suit[i] + rank[j] ;
-				number ++ ;
+				deckOfCard[number] = suit[i] + rank[j];
+				number ++;
 			}
 		}
-		return deckOfCard ;
+		return deckOfCard;
 	}
 	
 	public  void randomCard( String [] deckOfCard ) 
 	{
-		for( int i = 0 ; i< deckOfCard.length ; i++ )
+		for( int i = 0; i< deckOfCard.length; i++ )
 		{
-			String tempString = "" ;
-			Random random = new Random() ;
+			String tempString = "";
+			Random random = new Random();
 			int randomNumber = random.nextInt(52);
-			tempString = deckOfCard[randomNumber] ;
+			tempString = deckOfCard[randomNumber];
 			deckOfCard[randomNumber] = deckOfCard[ 51- randomNumber] ;
-			deckOfCard[51 - randomNumber] = tempString ;
+			deckOfCard[51 - randomNumber] = tempString;
  		}
 	}
 	
 	public  void distributeCardAndPrint( String []deckOfCard) 
 	{
-		String [][] cardDistribute = new String[4][9] ;
-		int count = 0 ;
+		String [][] cardDistribute = new String[4][9];
+		int count = 0;
 		
-		for( int i = 0 ; i < cardDistribute.length ; i++ ) 
+		for( int i = 0; i < cardDistribute.length; i++ ) 
 		{	
-			System.out.println("player "+(i+1)+" card : ") ;
+			System.out.println("player "+(i+1)+" card : ");
 			
-			for( int j = 0 ; j< cardDistribute[i].length ; j++ ) 
+			for( int j = 0; j< cardDistribute[i].length; j++ ) 
 			{
-				cardDistribute[i][j] = deckOfCard[count] ;
-				count ++ ;
-				System.out.print(" " +cardDistribute[i][j] +"  ") ;
+				cardDistribute[i][j] = deckOfCard[count];
+				count ++;
+				System.out.print(" " +cardDistribute[i][j] +"  ");
 			}
 			
 			System.out.println();
@@ -60,35 +60,35 @@ public class DeckOfCardMethods
 		
 	public  String [][]  distributeCard( String []deckOfCard) 
 	{
-		String [][] cardDistribute = new String[4][9] ;
-		int count = 0 ;
+		String [][] cardDistribute = new String[4][9];
+		int count = 0;
 		
-		for( int i = 0 ; i < cardDistribute.length ; i++ ) 
+		for( int i = 0; i < cardDistribute.length; i++ ) 
 		{	
 			
 			
-			for( int j = 0 ; j< cardDistribute[i].length ; j++ ) 
+			for( int j = 0; j< cardDistribute[i].length; j++ ) 
 			{
-				cardDistribute[i][j] = deckOfCard[count] ;
-				count ++ ;
+				cardDistribute[i][j] = deckOfCard[count];
+				count ++;
 			}
 		
 		}
 		
-		return cardDistribute ;
+		return cardDistribute;
 	}
 	
 	public  void sortArray ( int[] arrToSort ) 
 	{
-		for ( int row = 0 ; row < arrToSort.length ; row++ ) 
+		for ( int row = 0; row < arrToSort.length; row++ ) 
 		{
-			for ( int cell = 1 ; cell < arrToSort.length-row ; cell++ ) 
+			for ( int cell = 1; cell < arrToSort.length-row; cell++ ) 
 			{
 				if( arrToSort[ cell ] < arrToSort[ cell - 1 ] ) 
 				{
-					int temp = arrToSort[ cell ] ;
-					arrToSort[ cell ] = arrToSort[ cell - 1 ] ;
-					arrToSort[ cell - 1 ] = temp ;
+					int temp = arrToSort[ cell ];
+					arrToSort[ cell ] = arrToSort[ cell - 1 ];
+					arrToSort[ cell - 1 ] = temp;
 				}
 			}
 		}
@@ -96,30 +96,30 @@ public class DeckOfCardMethods
 	
 	public  void sortCard( String [][] distributeCard , String []card ) 
 	{
-		int array[] = new int [9] ;
+		int array[] = new int [9];
 		int l = 0;
-		for( int i = 0 ; i < 1 ; i++ ) 
+		for( int i = 0; i < 1; i++ ) 
 		{
-			for( int j = 0 ; j < distributeCard[i].length ; j++ ) 
+			for( int j = 0; j < distributeCard[i].length; j++ ) 
 			{
-				 int k = -1 ;
+				 int k = -1;
 				do {
-					k++ ; 
+					k++; 
 				}
 				while(distributeCard[i][j] != (card[k]) );
-				array[l] = k ;	
-				l++ ;
+				array[l] = k;	
+				l++;
 			
 			}   
 		}
 		OopsUtil.sortArray(array);
-		int p = 0 ;
-		for( int i = 0 ; i< 1 ; i++) 
+		int p = 0;
+		for( int i = 0; i< 1; i++) 
 		{
-			for( int j = 0 ; j < distributeCard[i].length ; j++ ) 
+			for( int j = 0; j < distributeCard[i].length; j++ ) 
 			{
-				distributeCard[i][j]= card[array[p]] ;
-				p++ ;
+				distributeCard[i][j]= card[array[p]];
+				p++;
 			
 			}
 		}
@@ -133,10 +133,10 @@ public class DeckOfCardMethods
 	
 	public  String [][] relaceMethodToString ( int [][] array)
 	     {
-		String [][] intToString = new String [4][9] ; 
-		for( int i = 0 ; i < array.length ; i++ ) 
+		String [][] intToString = new String [4][9]; 
+		for( int i = 0; i < array.length; i++ ) 
 		{
-			for( int j = 0 ; j < array[i].length ; j++ ) 
+			for( int j = 0; j < array[i].length; j++ ) 
 			{
 				intToString[i][j] = Integer.toString(array[i][j]);
 				intToString[i][j] = intToString[i][j].replaceAll("1","Clubs" );

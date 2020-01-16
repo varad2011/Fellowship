@@ -132,7 +132,8 @@ public class ClinicqueMethods
 						}
 						else 
 						{
-							System.out.println("no slot is available") ;
+							System.out.println("no slot is available for today\nNext date slot is available") ;
+							
 							return false ;
 						}
 			
@@ -175,8 +176,7 @@ public class ClinicqueMethods
 		{
 			appointment.setDoctorName(doctorName) ;
 			
-			System.out.println("enter date ") ;
-			String date = Util.Scanner() ;
+			String date = Util.datePut();
 			appointment.setDate(date) ;
 			
 			System.out.println("enter slot") ;
@@ -187,6 +187,20 @@ public class ClinicqueMethods
 			mapper.writeValue(new File(location ), clinique) ;
 			System.out.println("appointment is successfully done ");
 		
+		}
+		else 
+		{
+			appointment.setDoctorName(doctorName) ;
+			String tomorrowDate = Util.tommorrowdate();
+			appointment.setDate(tomorrowDate) ;
+			
+			System.out.println("enter slot") ;
+			int slot = Util.scanner() ;
+			appointment.setSlotNumber(slot) ;
+			appointmentList.add(appointment) ;
+			clinique.setAppointment(appointmentList) ;
+			mapper.writeValue(new File(location ), clinique) ;
+			System.out.println("appointment is successfully done ");
 		}
 		
 		

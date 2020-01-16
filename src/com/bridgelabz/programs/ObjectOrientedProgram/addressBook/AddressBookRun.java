@@ -71,12 +71,13 @@ public class AddressBookRun {
 			
 			///open an addressbook
 		case 2 :
-			System.out.println("enter name of address book");
+			System.out.println("enter name of file of Addressbook");
 			 fileName = Util.Scanner() ;
 			 fileNamewithJson = fileName + ".json" ;  
 			 fileFindFlag = addressBookMethod.findFileWithFileName(fileNamewithJson, new File(directory)) ;
 			 if(fileFindFlag == true ) 
 				{
+				 System.out.println("File found");
 				 System.out.println("Do u want to open all entry  \n only selected entry ");
 				 userInput = Util.scanner() ;
 					switch(userInput) 
@@ -86,6 +87,7 @@ public class AddressBookRun {
 						
 					case 2:
 						System.out.println("1) enter name of person available in address book \n2) ");
+					
 					}
 				}
 		}

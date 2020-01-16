@@ -6,7 +6,7 @@ public class Transaction
 	private String CompanyNme ;
 	private  int sellComanpnyShar ;
 	private int buySharByUser ;
-	private int date ;
+	private String date ;
 	public String getUserName() {
 		return userName;
 	}
@@ -31,10 +31,10 @@ public class Transaction
 	public void setBuySharByUser(int buySharByUser) {
 		this.buySharByUser = buySharByUser;
 	}
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	

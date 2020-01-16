@@ -81,12 +81,12 @@ public class AddressBookMethods
 	public void editOldEntry(String location ) throws JsonParseException, JsonMappingException, IOException 
 	{
 		AddressBookMethods  addressbook = new AddressBookMethods();
-		personDetail = mapper.readValue(new File(location), PersonDetails.class) ;
+		personDetail = mapper.readValue(new File(location), PersonDetails.class);
 		personList.addAll(personDetail.getPerson()) ;
 		System.out.println("List of user address Available inside file");
 		for(int i = 0 ; i < personList.size() ; i++ ) 
 		{
-			System.out.println(i+") Person name : "+personList.get(i).getName() +" lastName : "+ personList.get(i).getLastName() +"\ncity : "+ personList.get(i).getAddress().getCity() +" state : "+personList.get(i).getAddress().getState() +" zipCode : "+ personList.get(i).getAddress().getZipCode());
+			System.out.println(i+") Person name : "+personList.get(i).getName()+" lastName : "+ personList.get(i).getLastName() +"\ncity : "+ personList.get(i).getAddress().getCity() +" state : "+personList.get(i).getAddress().getState() +" zipCode : "+ personList.get(i).getAddress().getZipCode());
 			System.out.println();
 		}
 

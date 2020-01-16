@@ -1,11 +1,44 @@
 package com.bridgelabz.programs.utility;
 
 import java.math.BigInteger;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
+
+import org.codehaus.jackson.map.ser.std.ToStringSerializer;
 
 public class Util 
 {	
+	
+	public static String tommorrowdate() 
+	{
+		 // get a calendar instance, which defaults to "now"
+	    Calendar calendar = Calendar.getInstance();
+	   
+	    // add one day to the date/calendar
+	    calendar.add(Calendar.DAY_OF_YEAR, 1);
+	    
+	    // now get "tomorrow"
+	    Date tomorrow = calendar.getTime();
+
+	    // print out tomorrow's date
+	  //  System.out.println("tomorrow: " + tomorrow);
+	    String format = tomorrow.toString();
+	    return format;
+	}
+	
+	public static String datePut () 
+	{
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formatted = current.format(formatter);
+        //System.out.println("Current Date and Time is: " + formatted);
+        return formatted ;
+    }
+	
 	public static int scanner ( ) 
 	{
 		Scanner scanner = new Scanner(System.in);
