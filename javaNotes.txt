@@ -1,0 +1,75 @@
+Concreate class:
+
+A class that has an implementation for all of its methods. They cannot have any unimplemented methods. It can also extend an abstract class or implement an interface as long as it implements all their methods.
+
+Java FileOutputStream Class:
+
+Java FileOutputStream is an output stream used for writing data to a file.
+If you have to write primitive values into a file, use FileOutputStream class. You can write byte-oriented as well as character-oriented data through FileOutputStream class. But, for character-oriented data, it is preferred to use FileWriter than FileOutputStream. 
+
+Java FileInputStream Class:
+
+Java FileInputStream class obtains input bytes from a file. It is used for reading byte-oriented data (streams of raw bytes) such as image data, audio, video etc. You can also read character-stream data. But, for reading streams of characters, it is recommended to use FileReader class.
+
+Class.forName():
+
+this is the Java Reflection method to create the instance of the given class. You might wonder why we are using Reflection and not new operator to create the object and why we are just creating the object and not using it.
+
+The first reason is that using reflection to create instance helps us in writing loosely-coupled code that we can’t achieve if we are using new operator. In that case, we could not switch to different database without making corresponding code changes.
+
+The reason for not using the object is because we are not interested in creating the object. The main motive is to load the class into memory, so that the driver class can register itself to the DriverManager. If you will look into the Driver classes implementation, you will find that they have static block where they are registering themselves to DriverManager.
+
+Static blocks in Java:
+
+if we try to run any code before constructor create write code in static block .
+
+comparable :
+used in implemenatiaon class to implement comparable then write method
+compareTo(className instance){
+return ;
+if return 1 ,-1 to sort in assending dessending order
+
+
+comparator :
+used when we doesnt need to chnage client side code then we use comparator interface .
+where comparator<Employee> emp = comparator<Employee>
+       compare(Employee e1 ,Employee e2){
+if(e1>e2){
+return 1;
+}else{
+return -1;}
+}
+Arrays.sort(listofObject ,emp); 
+
+
+serialization:
+when we call object without recreating those then with that case we need serialization to convert data to byteStream.
+it is a process of covert object into sequence of byte
+
+DeSerialization :
+ the process of converting sequence of byte to object is call deserialization
+
+java8 feature
+
+Stream:
+when process object from collection then stream is  used.
+
+stream.filter and Stream.map method:
+
+ArrayList<Integer> emp = new ArrayList<Integer>();
+emp.add(10); emp.add(20); emp.add(15);
+List<Integer> list = emp.stream().filter((i)->(i%2==0)).Collect(Collectors.toList);
+sysout(list)
+o/p = 10,20 ;
+for conditional check use filter ..stream.filter(predicted)
+filtering based on condition
+
+for do any operation perform use map ...stream.map(funcation)
+
+count ();
+Long a = emp.steam().filter((i)->i>10).count();
+this method return count of lamba expression  return.  
+count how much object are there in stream.
+sort() :
+sort List according to natural sorting order.
+List<Integer> list = emp.Stream().sort().Collect(Collectors.toList);
